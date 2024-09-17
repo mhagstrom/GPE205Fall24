@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using JetBrains.Annotations;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -13,12 +15,13 @@ public class tankmovement : MonoBehaviour
     [SerializeField] private float rotationSpeed;
     private float verticalInput;
     private float horizontalInput;
+
     [Header("Aim Data")]
     [SerializeField] private LayerMask whatIsAimMask;
-    [SerializeField] private Transform aimSphere;
-
+    [SerializeField] private GameObject aimSphere;
+    
     [Header("Turret Data")]
-    [SerializeField] private Transform tankturret;
+    [SerializeField] private GameObject tankturret;
     [SerializeField] private float turretRotationSpeed;
 
     // Start is called before the first frame update
@@ -53,11 +56,11 @@ public class tankmovement : MonoBehaviour
 
     private void ApplyTurretRotation()
     {
-        Vector3 direction = aimSphere.position - tankturret.position;
+        Vector3 direction = aimSphere.transform.position - tankturret.transform.position;
 
         Quaternion targetRotation = Quaternion.LookRotation(direction);
 
-        tankturret.rotation = Quaternion.RotateTowards(tankturret.rotation, targetRotation, turretRotationSpeed);
+        tankturret.transform.rotation = Quaternion.RotateTowards(tankturret.transform.rotation, targetRotation, turretRotationSpeed);
 
         //tankturret.LookAt(aimSphere);
     }
@@ -81,7 +84,9 @@ public class tankmovement : MonoBehaviour
 
         if(Physics.Raycast(ray, out hit, Mathf.Infinity, whatIsAimMask))
         {
-            aimSphere.position = hit.point;
+            aimSphere.transform.position = hit.point;
         }
+
+        
     }
 }
