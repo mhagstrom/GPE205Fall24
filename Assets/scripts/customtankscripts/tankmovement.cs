@@ -86,7 +86,7 @@ public class tankmovement : MonoBehaviour
         {
             aimSphere.transform.position = hit.point;
         }
+        //aimSphere.GetComponent<Material>().color = Color.red;
 
-        
     }
 }
