@@ -7,8 +7,9 @@ using UnityEngine;
 
 public abstract class Controller : MonoBehaviour
 {
-	public Class1()
-	{
+    public abstract void Start();
 
-	}
+    public abstract void Update();
+
+    public abstract void ProcessInputs();
 }

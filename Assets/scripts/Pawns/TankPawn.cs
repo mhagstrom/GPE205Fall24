@@ -7,5 +7,12 @@ using UnityEngine;
 
 public class TankPawn : Pawn
 {
-	
+	public override void VerticalInput()
+	{
+		
+	}
+	public override void HorizontalInput()
+	{
+
+	}
 }

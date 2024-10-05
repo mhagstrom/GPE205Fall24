@@ -7,10 +7,10 @@ using UnityEngine;
 
 public class PlayerController : Controller
 {
-	public KeyCode moveforwardKey;
-	public KeyCode moveBackwardKey;
-	public KeyCode rotateClockwiseKey;
-	public KeyCode rotateCounterClockwisekey;
+	//GetAxis returns float from Unity for named axis
+	public float verticalInput;
+	public float horizontalInput;
+
 
 	public override void Start()
 	{
@@ -24,24 +24,10 @@ public class PlayerController : Controller
 
 	public override void ProcessInputs()
 	{
-		if (ProcessInputs().GetKey(moveforwardKey))
-		{
-			pawn.MoveForward();
-		}
+		verticalInput = Input.GetAxis("Vertical");
+		horizontalInput = Input.GetAxis("Horizontal");
 
-        if (ProcessInputs().GetKey(movebackwardKey))
-        {
-            pawn.MoveBackward();
-        }
-
-        if (ProcessInputs().GetKey(turnClockwiseKey))
-        {
-            pawn.TurnClockwise();
-        }
-
-        if (ProcessInputs().GetKey(turnCounterClockwiseKey))
-        {
-            pawn.TurnCounterClockwise();
-        }
-    }
+		if (verticalInput < 0)
+			horizontalInput = -Input.GetAxis("Horizontal");
+	}
 }

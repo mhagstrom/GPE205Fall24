@@ -700,7 +700,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 4aac0f0c409890f4087feed0e96eca4d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1162,8 +1162,8 @@ MonoBehaviour:
   whatIsAimMask:
     serializedVersion: 2
     m_Bits: 1
-  aimSphere: {fileID: 843208271}
-  tankturret: {fileID: 1421632044}
+  aimSphere: {fileID: 843208267}
+  tankturret: {fileID: 1421632043}
   turretRotationSpeed: 1.5
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
