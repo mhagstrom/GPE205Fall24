@@ -19,13 +19,18 @@ public class AutoTurret : Pawn
     {
         timeSinceLastAttack += Time.deltaTime;
     }
-    
-    public override void VerticalInput(float value)
+
+    public override void Mover()
     {
         
     }
 
-    public override void HorizontalInput(float value)
+    public void VerticalInput(float value)
+    {
+        
+    }
+
+    public void HorizontalInput(float value)
     {
         
     }

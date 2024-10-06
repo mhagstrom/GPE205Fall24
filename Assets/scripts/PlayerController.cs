@@ -44,9 +44,10 @@ public class PlayerController : Controller
 		if (verticalInput < 0)
 			horizontalInput = -Input.GetAxis("Horizontal");
 		
-		playerPawn.VerticalInput(verticalInput);
-		playerPawn.HorizontalInput(horizontalInput);
+		playerPawn.Mover();
 		
+		
+		//camera zooming isn't used right now because I need to figure out how to move the camera to the new tank on respawn or switch
 		//camera zoom is vector2 from Input.mouseScrollDelta p.s. might switch to new unity input system for more device compatibility
 		//cameraTransform.position += cameraTransform.forward * Input.mouseScrollDelta.y * cameraZoomSpeed; comment out for more explanatory format below
 		

@@ -13,8 +13,8 @@ public class GameManager : MonoBehaviour
     private List<TankPawn> enemies;
     
     //gameState
-    public int lives { get; private set; } = 3;
-    public int score { get; private set; } = 0;
+    public int Lives { get; private set; } = 3;
+    public int Score { get; private set; } = 0;
     //making lives and score properties allows the values to be displayed to the player without exposing them to edits outside of the game manager aka getters and setters
     //properties lowercase
 

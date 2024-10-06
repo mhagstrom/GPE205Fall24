@@ -26,7 +26,7 @@ public class Bullet : MonoBehaviour
         DestroyStrayBullet();
     }
     
-    //upon bullet colliding with another object, check if object has heallth component and if so run ondamagetaken subtracting health equal to damage value of this bullet
+    //upon bullet colliding with another object, check if object has health component and if so run ondamagetaken subtracting health equal to damage value of this bullet
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.TryGetComponent(out Health health))
@@ -42,6 +42,7 @@ public class Bullet : MonoBehaviour
     //coroutines aren't allowed so I'm using async for this
     #pragma warning disable CS0168 
     //Not using the exception
+    //later i can use a queue for valid reference check to avoid null reference exceptions
     private async void DestroyStrayBullet()
     {
         CancellationToken ct = src.Token;
@@ -59,7 +60,7 @@ public class Bullet : MonoBehaviour
     #pragma warning restore CS0168
     
     /*
-     Extra math every frame to check if the bullet is still alive is unnecessary when the OS can handle it
+     Extra math every frame to check if the bullet is still alive is unnecessary when the OS can handle it on another thread
     private float lifetimeTimer = 10;
     public virtual void Update()
     {

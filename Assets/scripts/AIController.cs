@@ -20,8 +20,10 @@ public class AIController : Controller
     }
     
     //here I provide direct actions in lieu of player input for the AI
+    //I need to make this so it only runs with the areaofinterest trigger event from a target entering range of the turret to avoid null reference errors
     public override void ProcessInputs()
     {
+        if (target == null) return;
         pawn.cursorInput(target.position);
         pawn.Attack();
     }

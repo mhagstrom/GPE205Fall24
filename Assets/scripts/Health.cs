@@ -21,9 +21,11 @@ public class Health : MonoBehaviour
     public void OnDamageTaken(int damage)
     {
         currentHealth -= damage;
+        Debug.Log(damage + "damage taken! " + "Health: " + currentHealth);
         if (currentHealth <= 0)
         {
             OnDie();
+            Debug.Log("Dead!");
         }
     }
 }

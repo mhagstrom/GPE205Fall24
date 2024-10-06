@@ -37,7 +37,7 @@ public class Turret : TankComponent
         {
             aimCursor.ShowTargetLock(false);
         }
-        
+        //gun tube movement isn't working yet, likely due to it being parented to another rotating object
         float yRotation = Mathf.Atan2(aimDirection.x, aimDirection.z) * Mathf.Rad2Deg;
         Quaternion destination = Quaternion.Euler(0, yRotation + 180, 0);
         tankturret.rotation = Quaternion.RotateTowards(tankturret.rotation, destination, turretRotationSpeed * Time.deltaTime);
