@@ -16,13 +16,14 @@ public class AIController : Controller
     // Update is called once per frame
     public override void Update()
     {
-        
+        ProcessInputs();
     }
     
     //here I provide direct actions in lieu of player input for the AI
     public override void ProcessInputs()
     {
-        
+        pawn.cursorInput(target.position);
+        pawn.Attack();
     }
     
     

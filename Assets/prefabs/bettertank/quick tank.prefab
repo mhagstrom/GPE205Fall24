@@ -129,7 +129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aimMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 51
 --- !u!1001 &6073453030866536280
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -298,6 +298,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 2.5
   rotationSpeed: 2.5
+  attackRate: 1
   tankMovement: {fileID: 220927861977871714}
   turret: {fileID: 3759836461989754951}
   shooting: {fileID: 633124730781655613}

@@ -13,7 +13,9 @@ public abstract class Pawn : MonoBehaviour
     //Variable for turn speed
     public float rotationSpeed;
 
-
+    //variable for attack rate
+    public float attackRate;
+    
     public virtual void Start()
     {
 
@@ -30,9 +32,7 @@ public abstract class Pawn : MonoBehaviour
 
     public abstract void Attack();
 
-    //public abstract void MoveForward();
-    //public abstract void MoveBackward();
-    //public abstract void RotateClockwise();
-    //public abstract void RotateCounterClockwise();
+    //this will be used to rotate the turret towards the target by faking cursor input with target location
+    public abstract void cursorInput(Vector3 value);
 
 }
