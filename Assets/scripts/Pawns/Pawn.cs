@@ -25,8 +25,8 @@ public abstract class Pawn : MonoBehaviour
     }
 
 
-    public abstract void VerticalInput();
-    public abstract void HorizontalInput();
+    public abstract void VerticalInput(float value);
+    public abstract void HorizontalInput(float value);
 
     //public abstract void MoveForward();
     //public abstract void MoveBackward();

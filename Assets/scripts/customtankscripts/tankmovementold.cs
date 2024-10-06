@@ -5,7 +5,7 @@ using JetBrains.Annotations;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class tankmovement : MonoBehaviour
+public class tankmovementold : MonoBehaviour
 {
     private Rigidbody rb;
 
