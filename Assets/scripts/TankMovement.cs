@@ -17,6 +17,7 @@ public class TankMovement : MonoBehaviour
     }
 
     //need to learn about namespaces so I can make these internal
+    //movement is not fixed update to avoid lag issues but uses delta time to remain framerate independent
     public void ApplyMovement(float verticalInput)
     {
         Vector3 movement = transform.forward * verticalInput;

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Turret : MonoBehaviour
+public class Turret : TankComponent
 {
     [Header("Aim Data")]
     [SerializeField] private LayerMask whatIsAimMask;
@@ -38,12 +38,17 @@ public class Turret : MonoBehaviour
             aimCursor.ShowTargetLock(false);
         }
         
-        //rotate the turret on the Y axis to face the aimCursor
+        float yRotation = Mathf.Atan2(aimDirection.x, aimDirection.z) * Mathf.Rad2Deg;
+        Quaternion destination = Quaternion.Euler(0, yRotation + 180, 0);
+        tankturret.rotation = Quaternion.RotateTowards(tankturret.rotation, destination, turretRotationSpeed * Time.deltaTime);
+        
+       /* //rotate the turret on the Y axis to face the aimCursor
         Quaternion turretRotation = Quaternion.LookRotation(aimDirection, Vector3.up);
-        tankturret.rotation = Quaternion.Slerp(tankturret.rotation, turretRotation, turretRotationSpeed * Time.deltaTime);
+        tankturret.rotation = Quaternion.RotateTowards(tankturret.rotation, turretRotation, turretRotationSpeed * Time.deltaTime);
         
         //rotate the guntube on the local X axis to face the aimCursor
         Quaternion gunTubeRotation = Quaternion.LookRotation(aimDirection, tankturret.right);
         gunTube.localRotation = Quaternion.RotateTowards(gunTube.localRotation, gunTubeRotation, turretRotationSpeed * Time.deltaTime);
+        */
     }
 }

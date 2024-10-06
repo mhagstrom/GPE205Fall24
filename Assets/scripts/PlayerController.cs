@@ -59,5 +59,11 @@ public class PlayerController : Controller
 		cameraTransform.position += cameraTransform.forward * scrollDelta;
 		
 		//camerascroll function lets this script serve more purpose than just passing along values and makes finding enemies easier
+		
+		//shooting with left click mouse input
+		if (Input.GetMouseButtonDown(0))
+		{
+			playerPawn.Attack();
+		}
 	}
 }
