@@ -55,7 +55,12 @@ public class Bullet : MonoBehaviour
             src.Dispose();
             return;
         }
-        Destroy(gameObject);
+
+        if (gameObject != null)
+        {
+            Destroy(gameObject);
+        }
+        
     }
     #pragma warning restore CS0168
     

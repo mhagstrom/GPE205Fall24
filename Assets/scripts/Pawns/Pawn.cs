@@ -7,6 +7,10 @@ using UnityEngine;
 
 public abstract class Pawn : MonoBehaviour
 {
+    protected Mover mover;
+    protected Shooter shooter;
+    protected Health health;
+    
     //Variable for move speed
     public float moveSpeed;
 

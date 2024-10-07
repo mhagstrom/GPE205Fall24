@@ -31,7 +31,6 @@ public class PlayerController : Controller
 		//every frame check if the tank still exists, if so do inputs
 		//don't process inputs if tank is destroyed to avoid errors
 		if (playerPawn == null) return;
-		
 		ProcessInputs();
 	}
 	

@@ -8,10 +8,14 @@ using UnityEngine;
 public class TankPawn : Pawn
 {
 	//serializefields instead of getcomponent in awake
-	[SerializeField] private TankMovement tankMovement;
 	[SerializeField] private Turret turret;
-	[SerializeField] private TankShooting shooting;
 	private float timeSinceLastAttack = 0;
+	
+	private void Awake()
+	{
+		mover = GetComponent<TankMovement>();
+		shooter = GetComponent<TankShooting>();
+	}
 	
 	// Update is called once per frame
 	public override void Update()
@@ -24,8 +28,8 @@ public class TankPawn : Pawn
 	{
 		float verticalInput = Input.GetAxis("Vertical");
 		float horizontalInput = Input.GetAxis("Horizontal");
-		tankMovement.ApplyMovement(verticalInput);
-		tankMovement.ApplyHullRotation(horizontalInput);
+		mover.ApplyMovement(verticalInput);
+		mover.ApplyHullRotation(horizontalInput);
 	}
 	public override void Attack()
 	{ //check if able to attack again
@@ -33,7 +37,7 @@ public class TankPawn : Pawn
 		{
 			return;
 		}
-		shooting.Shoot();
+		shooter.Shoot();
 		timeSinceLastAttack = 0;
 	}
 
