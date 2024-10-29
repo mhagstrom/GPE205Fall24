@@ -20,6 +20,9 @@ public abstract class Pawn : MonoBehaviour
     //variable for attack rate
     public float attackRate;
     
+    //for aicontroller to use
+    public abstract void RotateTowards(Vector3 targetPosition);
+    
     public virtual void Start()
     {
 
@@ -31,7 +34,7 @@ public abstract class Pawn : MonoBehaviour
     }
 
 
-    public abstract void Mover();
+    public abstract void Mover(float f);
 
     public abstract void Attack();
 

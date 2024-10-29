@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AimCursor : MonoBehaviour
 {
+    //compile time cache reference
     private static readonly int Color1 = Shader.PropertyToID("_Color");
 
     [Header("Aim Data")]
